@@ -1,0 +1,39 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Parametros
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Dimensoes
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup Fatos
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup Funcoes
+
+	annotation PBI_QueryGroupOrder = 3
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["base_transacoes","data_inicial","data_final","moedas","calendario","transacoes","getCotacoes","cotacoes"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_f0d0e2ff-0abd-4eed-a760-930dcfcac130
+ref table moedas
+ref table calendario
+ref table transacoes
+ref table cotacoes
+ref table LocalDateTable_d3b4858c-60d8-4878-8fbc-be01e20be7a0
+
+ref cultureInfo pt-BR
+
